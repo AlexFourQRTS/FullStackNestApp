@@ -1,11 +1,7 @@
 import { ArrowRight, MessageCircle, FileText, Image, Zap, Users, ListTodo, Shield } from "lucide-react";
-import { Link } from "wouter";
-import { useAuth } from "@/hooks/use-auth";
 import styles from "./home.module.css";
 
 export default function Home() {
-  const { isAuthenticated } = useAuth();
-
   return (
     <div>
       {/* Hero Section */}
@@ -19,29 +15,15 @@ export default function Home() {
             Your role-based task management platform with secure authentication, role elevation requests, and collaborative team workflows.
           </p>
           <div className={styles.heroButtons}>
-            {isAuthenticated ? (
-              <Link href="/dashboard">
-                <button className={styles.primaryButton}>
-                  <ListTodo className="h-5 w-5" />
-                  Go to Dashboard
-                  <ArrowRight className="h-5 w-5" />
-                </button>
-              </Link>
-            ) : (
-              <Link href="/login">
-                <button className={styles.primaryButton}>
-                  <Shield className="h-5 w-5" />
-                  Get Started
-                  <ArrowRight className="h-5 w-5" />
-                </button>
-              </Link>
-            )}
-            <Link href="/login">
-              <button className={styles.secondaryButton}>
-                <Users className="h-5 w-5" />
-                {isAuthenticated ? "Switch Account" : "Login"}
-              </button>
-            </Link>
+            <button className={styles.primaryButton}>
+              <Shield className="h-5 w-5" />
+              Get Started
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            <button className={styles.secondaryButton}>
+              <Users className="h-5 w-5" />
+              Learn More
+            </button>
           </div>
         </div>
       </section>
@@ -63,19 +45,9 @@ export default function Home() {
               <p className={styles.featureDescription}>
                 Create, assign, and track tasks with priority levels and status updates. Perfect for personal and team productivity.
               </p>
-              {isAuthenticated ? (
-                <Link href="/tasks">
-                  <button className={styles.featureButton}>
-                    View Tasks <ArrowRight className="h-4 w-4" />
-                  </button>
-                </Link>
-              ) : (
-                <Link href="/login">
-                  <button className={styles.featureButton}>
-                    Get Started <ArrowRight className="h-4 w-4" />
-                  </button>
-                </Link>
-              )}
+              <button className={styles.featureButton}>
+                Coming Soon <ArrowRight className="h-4 w-4" />
+              </button>
             </div>
 
             <div className={styles.featureCard}>
@@ -86,19 +58,9 @@ export default function Home() {
               <p className={styles.featureDescription}>
                 Secure role management with USER, MANAGER, and ADMIN levels. Each role has specific permissions and capabilities.
               </p>
-              {isAuthenticated ? (
-                <Link href="/request-role">
-                  <button className={styles.featureButton}>
-                    Request Role <ArrowRight className="h-4 w-4" />
-                  </button>
-                </Link>
-              ) : (
-                <Link href="/login">
-                  <button className={styles.featureButton}>
-                    Learn More <ArrowRight className="h-4 w-4" />
-                  </button>
-                </Link>
-              )}
+              <button className={styles.featureButton}>
+                Coming Soon <ArrowRight className="h-4 w-4" />
+              </button>
             </div>
 
             <div className={styles.featureCard}>
@@ -109,19 +71,9 @@ export default function Home() {
               <p className={styles.featureDescription}>
                 Managers can oversee team tasks, assign work to team members, and track progress across projects.
               </p>
-              {isAuthenticated ? (
-                <Link href="/team-tasks">
-                  <button className={styles.featureButton}>
-                    Team View <ArrowRight className="h-4 w-4" />
-                  </button>
-                </Link>
-              ) : (
-                <Link href="/login">
-                  <button className={styles.featureButton}>
-                    Join Team <ArrowRight className="h-4 w-4" />
-                  </button>
-                </Link>
-              )}
+              <button className={styles.featureButton}>
+                Coming Soon <ArrowRight className="h-4 w-4" />
+              </button>
             </div>
 
             <div className={styles.featureCard}>
@@ -132,19 +84,9 @@ export default function Home() {
               <p className={styles.featureDescription}>
                 Users can request role elevation with justification. Admins review and approve requests with full audit trail.
               </p>
-              {isAuthenticated ? (
-                <Link href="/dashboard">
-                  <button className={styles.featureButton}>
-                    Dashboard <ArrowRight className="h-4 w-4" />
-                  </button>
-                </Link>
-              ) : (
-                <Link href="/login">
-                  <button className={styles.featureButton}>
-                    Discover <ArrowRight className="h-4 w-4" />
-                  </button>
-                </Link>
-              )}
+              <button className={styles.featureButton}>
+                Coming Soon <ArrowRight className="h-4 w-4" />
+              </button>
             </div>
           </div>
         </div>
