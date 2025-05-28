@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Switch } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -7,13 +8,13 @@ import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
 
 // Pages
-import Home from "./pages/home";
-import Blog from "./pages/blog";
-import Chat from "./pages/chat";
-import Media from "./pages/media";
-import Technologies from "./pages/technologies";
-import About from "./pages/about";
-import News from "./pages/news";
+import Home from "./pages/home/index";
+import Blog from "./pages/blog/index";
+import Chat from "./pages/chat/index";
+import Media from "./pages/media/index";
+import Technologies from "./pages/technologies/index";
+import About from "./pages/about/index";
+import News from "./pages/news/index";
 import NotFound from "./pages/not-found";
 
 const queryClient = new QueryClient({

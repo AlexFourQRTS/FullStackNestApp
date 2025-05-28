@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import React, { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { onAuthStateChange, signInWithGoogle, logOut, handleRedirectResult, type User } from "../lib/firebase";
 import { useToast } from "../hooks/use-toast";
 
