@@ -1,0 +1,22 @@
+brahma@brahma-dev:~/Рабочий стол/Git Alex/Replit/FullStackNestApp/react-app$ npm run build
+
+> react-app@1.0.0 build
+> vite build
+
+vite v5.4.19 building for production...
+✓ 23 modules transformed.
+x Build failed in 383ms
+error during build:
+[vite]: Rollup failed to resolve import "react-hook-form" from "/home/brahma/Рабочий стол/Git Alex/Replit/FullStackNestApp/react-app/src/pages/blog/index.tsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`
+    at viteWarn (file:///home/brahma/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Alex/Replit/FullStackNestApp/react-app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65839:17)
+    at onwarn (file:///home/brahma/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Alex/Replit/FullStackNestApp/react-app/node_modules/@vitejs/plugin-react/dist/index.mjs:104:9)
+    at onRollupWarning (file:///home/brahma/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Alex/Replit/FullStackNestApp/react-app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65869:5)
+    at onwarn (file:///home/brahma/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Alex/Replit/FullStackNestApp/react-app/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:65534:7)
+    at file:///home/brahma/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Alex/Replit/FullStackNestApp/react-app/node_modules/rollup/dist/es/shared/node-entry.js:20779:13
+    at Object.logger [as onLog] (file:///home/brahma/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Alex/Replit/FullStackNestApp/react-app/node_modules/rollup/dist/es/shared/node-entry.js:22644:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///home/brahma/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Alex/Replit/FullStackNestApp/react-app/node_modules/rollup/dist/es/shared/node-entry.js:21391:26)
+    at file:///home/brahma/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Alex/Replit/FullStackNestApp/react-app/node_modules/rollup/dist/es/shared/node-entry.js:21349:26
+brahma@brahma-dev:~/Рабочий стол/Git Alex/Replit/FullStackNestApp/react-app$ 
