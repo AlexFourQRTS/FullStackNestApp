@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { onAuthStateChange, signInWithGoogle, logOut, handleRedirectResult, type User } from "@/lib/firebase";
-import { useToast } from "@/hooks/use-toast";
+import { onAuthStateChange, signInWithGoogle, logOut, handleRedirectResult, type User } from "../lib/firebase";
+import { useToast } from "../hooks/use-toast";
 
 interface AuthContextType {
   user: User | null;
