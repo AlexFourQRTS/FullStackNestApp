@@ -1,18 +1,57 @@
-import { createContext, useContext, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { onAuthStateChange, signInWithGoogle, logOut, handleRedirectResult, type User } from "../lib/firebase";
+import { useToast } from "../hooks/use-toast";
 
 interface AuthContextType {
-  user: null;
-  login: () => void;
-  logout: () => void;
+  user: User | null;
+  isAuthenticated: boolean;
+  isLoading: boolean;
+  signIn: () => Promise<void>;
+  signOut: () => Promise<void>;
+  error: string | null;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const value = {
-    user: null,
-    login: () => {},
-    logout: () => {}
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+export function AuthProvider({ children }: AuthProviderProps) {
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    // Mock auth is disabled, set loading to false immediately
+    setIsLoading(false);
+    setUser(null);
+  }, []);
+
+  const signIn = async () => {
+    // Mock implementation - authentication disabled
+    toast({
+      title: "Authentication Disabled",
+      description: "Google authentication is temporarily disabled. Use anonymous chat instead.",
+    });
+  };
+
+  const signOut = async () => {
+    // Mock implementation - authentication disabled
+    toast({
+      title: "Authentication Disabled", 
+      description: "Google authentication is temporarily disabled.",
+    });
+  };
+
+  const value: AuthContextType = {
+    user,
+    isAuthenticated: !!user,
+    isLoading,
+    signIn,
+    signOut,
+    error,
   };
 
   return (
@@ -22,10 +61,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export function useAuth() {
+export function useAuth(): AuthContextType {
   const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within AuthProvider');
+  if (context === undefined) {
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 }

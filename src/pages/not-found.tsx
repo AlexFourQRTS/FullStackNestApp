@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Home, ArrowLeft } from "lucide-react";
+import { Home, ArrowLeft, Frown } from "lucide-react";
 import { Link } from "wouter";
-import sadnessImage from "@assets/klipartz.com_1748440676219.png";
 
 export default function NotFound() {
   return (
@@ -10,11 +9,7 @@ export default function NotFound() {
       <div className="text-center max-w-2xl mx-auto">
         {/* Sadness Character */}
         <div className="mb-8">
-          <img 
-            src={sadnessImage} 
-            alt="Sad character" 
-            className="w-64 h-64 mx-auto object-contain"
-          />
+          <Frown className="w-32 h-32 mx-auto text-orange-400" />
         </div>
 
         {/* Error Text */}
