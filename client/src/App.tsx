@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useAuth } from "@/hooks/use-auth";
 
 // Pages
+import Home from "@/pages/home";
 import Login from "@/pages/login";
 import Dashboard from "@/pages/dashboard";
 import Tasks from "@/pages/tasks";
@@ -54,6 +55,7 @@ function Router() {
   return (
     <Switch>
       {/* Public routes */}
+      <Route path="/home" component={Home} />
       <Route path="/login" component={Login} />
       
       {/* Protected routes */}
@@ -82,9 +84,7 @@ function Router() {
       </Route>
 
       {/* Default redirects */}
-      <Route path="/">
-        {isAuthenticated ? <Redirect to="/dashboard" /> : <Redirect to="/login" />}
-      </Route>
+      <Route path="/" component={Home} />
       
       {/* 404 fallback */}
       <Route component={NotFound} />
